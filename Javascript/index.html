@@ -7,6 +7,18 @@
   <script src="./script.js"></script>
 </head>
 <body>
-    <h1> Hello World</h1>
+    <h1 id="name">Praveen maila</h1>
+    <button onclick="fun1()">Change text</button>
+    <script>
+        function fun1(){
+            let temp=document.getElementById("name").innerHTML;
+            
+            if(temp=="Hello praveen"){
+                document.getElementById("name").innerHTML="Praveen maila";
+            }else{
+                document.getElementById("name").innerHTML="Hello praveen";
+            }
+        }
+        </script>
 </body>
 </html>
