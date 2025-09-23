@@ -1,0 +1,30 @@
+.body {
+  color: aqua;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: 300px 300px 300px;
+  grid-template-rows: 200px 200px;
+  grid-gap: 10px;
+}
+.grid-item {
+  background-color: blanchedalmond;
+  height: 100%;
+  width: 100%;
+  position: relative;
+
+  border: solid black 5px;
+  align-content: space-evenly;
+}
+.grid-item p {
+  position: absolute;
+  bottom: 10px; /* text at bottom */
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  color: black;
+  font-weight: bold;
+  background: white; /* for readability */
+  border-radius: 5px;
+  padding: 5px;
+}
