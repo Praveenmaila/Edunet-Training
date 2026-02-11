@@ -17,7 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from rest_framework.routers import DefaultRouter
-from event.views import StudentViewset
+from event.views import StudentViewset, dashboard
+
 
 router = DefaultRouter()
 router.register('students', StudentViewset, basename='student')
@@ -25,4 +26,5 @@ router.register('students', StudentViewset, basename='student')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
+    path('', dashboard, name='dashboard')
 ]
