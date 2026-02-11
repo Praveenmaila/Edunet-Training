@@ -5,6 +5,11 @@ from .form import userFormData
 from .models import userForm
 
 def addUser(request):
-    userFormData.request="POST"
-    name=request.POST['name']
-    email=request.POST['email']
+    if request.method == "POST":
+        form=userFormData(request.POST)
+        if form.is_valid():
+            form.save()
+    else:
+        form=userFormData()
+    users=userForm.objects.all()
+    return render(request, "addUser.html", {"form": form, "users": users})

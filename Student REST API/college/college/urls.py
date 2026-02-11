@@ -1,5 +1,5 @@
 """
-URL configuration for customer project.
+URL configuration for college project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.2/topics/http/urls/
@@ -15,10 +15,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from users.views import addUser
+from django.urls import path,include
+from rest_framework.routers import DefaultRouter
+from event.views import StudentViewset
+
+router = DefaultRouter()
+router.register('students', StudentViewset, basename='student')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', addUser, name="addUser"),
+    path('api/', include(router.urls)),
 ]
